@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    *  Copyright (C) 2017 David Lewis (highwayoflife@gmail.com)
+    *
+    *  This file is part of FreeCol.
+    *
+    *  FreeCol is free software: you can redistribute it and/or modify
+    *  it under the terms of the GNU General Public License as published by
+    *  the Free Software Foundation, either version 2 of the License, or
+    *  (at your option) any later version.
+    *
+    *  FreeCol is distributed in the hope that it will be useful,
+    *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+    *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    *  GNU General Public License for more details.
+    *
+    *  You should have received a copy of the GNU General Public License
+    *  along with FreeCol.  If not, see <http://www.gnu.org/licenses/>.
+    *
+  -->
+<freecol-specification id="multitalentedExperts" version="0.1">
+  <unit-types>
+    <unit-type id="model.unit.expertFarmer" extends="colonist"
+               price="1100" skill="1" expert-production="model.goods.grain"
+               recruit-probability="1" score-value="4">
+      <modifier id="model.goods.grain" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.tobacco" index="30" type="additive" value="2"/>
+      <modifier id="model.goods.cotton" index="30" type="additive" value="2"/>
+      <modifier id="model.goods.sugar" index="30" type="additive" value="2"/>
+    </unit-type>
+    <unit-type id="model.unit.expertFisherman" extends="colonist"
+               price="1000" skill="1" expert-production="model.goods.fish"
+               recruit-probability="1" score-value="4">
+      <modifier id="model.goods.fish" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.furs" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.expertFurTrapper" extends="colonist"
+               skill="1" expert-production="model.goods.furs"
+               score-value="4" >
+      <modifier id="model.goods.furs" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.grain" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.expertSilverMiner" extends="colonist"
+               price="900" skill="1" expert-production="model.goods.silver"
+               recruit-probability="1" score-value="4">
+      <modifier id="model.goods.silver" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.ore" index="30" type="additive" value="2"/>
+    </unit-type>
+    <unit-type id="model.unit.expertLumberJack" extends="colonist"
+               price="700" skill="1" expert-production="model.goods.lumber"
+               recruit-probability="1" score-value="4">
+      <modifier id="model.goods.lumber" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.hammers" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.expertOreMiner" extends="colonist"
+               price="600" skill="1" expert-production="model.goods.ore"
+               recruit-probability="1" score-value="4">
+      <modifier id="model.goods.ore" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.silver" index="30" type="additive" value="2"/>
+    </unit-type>
+    <unit-type id="model.unit.masterSugarPlanter" extends="colonist"
+               skill="2" expert-production="model.goods.sugar"
+               score-value="5" >
+      <modifier id="model.goods.sugar" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.grain" index="30" type="additive" value="2"/>
+      <modifier id="model.goods.tobacco" index="30" type="additive" value="1"/>
+      <modifier id="model.goods.cotton" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterCottonPlanter" extends="colonist"
+               skill="2" expert-production="model.goods.cotton"
+               score-value="5" >
+      <modifier id="model.goods.cotton" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.sugar" index="30" type="additive" value="1"/>
+      <modifier id="model.goods.grain" index="30" type="additive" value="2"/>
+      <modifier id="model.goods.tobacco" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterTobaccoPlanter" extends="colonist"
+               skill="2" expert-production="model.goods.tobacco"
+               score-value="5" >
+      <modifier id="model.goods.tobacco" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.cotton" index="30" type="additive" value="1"/>
+      <modifier id="model.goods.sugar" index="30" type="additive" value="1"/>
+      <modifier id="model.goods.grain" index="30" type="additive" value="2"/>
+    </unit-type>
+    <unit-type id="model.unit.firebrandPreacher" extends="colonist"
+               price="1500" skill="3" expert-production="model.goods.crosses"
+               recruit-probability="1" score-value="6">
+      <modifier id="model.modifier.missionaryTradeBonus" type="percentage" value="10"/>
+      <modifier id="model.goods.crosses" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.bells" index="30" type="additive" value="2"/>
+    </unit-type>
+    <unit-type id="model.unit.elderStatesman" extends="colonist"
+               price="1900" skill="3" expert-production="model.goods.bells"
+               recruit-probability="1" score-value="6">
+      <modifier id="model.goods.bells" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.crosses" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterCarpenter" extends="colonist"
+               price="1000" skill="1" expert-production="model.goods.hammers"
+               recruit-probability="1" score-value="4">
+      <modifier id="model.goods.hammers" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.lumber" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterDistiller" extends="colonist"
+               price="1100" skill="2" expert-production="model.goods.rum"
+               recruit-probability="1" score-value="5">
+      <modifier id="model.goods.rum" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.cigars" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterWeaver" extends="colonist"
+               price="1300" skill="2" expert-production="model.goods.cloth"
+               recruit-probability="1" score-value="5">
+      <modifier id="model.goods.cloth" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.coats" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterTobacconist" extends="colonist"
+               price="1200" skill="2" expert-production="model.goods.cigars"
+               recruit-probability="1" score-value="5">
+      <modifier id="model.goods.cigars" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.rum" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterFurTrader" extends="colonist"
+               price="950" skill="2" expert-production="model.goods.coats"
+               recruit-probability="1" score-value="5">
+      <modifier id="model.goods.coats" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.cloth" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterBlacksmith" extends="colonist"
+               price="1050" skill="2" expert-production="model.goods.tools"
+               recruit-probability="1" score-value="5">
+      <modifier id="model.goods.tools" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.muskets" index="30" type="additive" value="1"/>
+    </unit-type>
+    <unit-type id="model.unit.masterGunsmith" extends="colonist"
+               price="850" skill="2" expert-production="model.goods.muskets"
+               recruit-probability="1" score-value="5">
+      <modifier id="model.goods.muskets" index="30" type="multiplicative" value="2"/>
+      <modifier id="model.goods.tools" index="30" type="additive" value="2"/>
+    </unit-type>
+    <unit-type id="model.unit.jesuitMissionary" extends="colonist"
+               price="1400" skill="3"
+               recruit-probability="1" score-value="5">
+      <default-role id="model.role.missionary"/>
+      <ability id="model.ability.expertMissionary" value="true"/>
+      <modifier id="model.modifier.missionaryTradeBonus" type="percentage" value="10"/>
+      <modifier id="model.goods.crosses" index="30" type="additive" value="2"/>
+    </unit-type>
+  </unit-types>
+</freecol-specification>
