@@ -65,4 +65,4 @@ To obtain this mod. Click the Download link above or git clone this repo into yo
 
 ## Contributors
 * [David Lewis](https://github.com/HighwayofLife)
-* Repo Origin: https://github.com/HighwayofLife/expandExperience
+* Repo Origin: https://github.com/HighwayofLife/multitalentedExperts
