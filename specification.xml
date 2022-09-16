@@ -23,7 +23,7 @@
     <unit-type id="model.unit.expertFarmer" extends="colonist"
                price="1100" skill="1" expert-production="model.goods.grain"
                recruit-probability="1" score-value="4">
-      <modifier id="model.goods.grain" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.grain" index="30" type="multiplicative" value="2"/>
       <modifier id="model.goods.tobacco" index="30" type="additive" value="2"/>
       <modifier id="model.goods.cotton" index="30" type="additive" value="2"/>
       <modifier id="model.goods.sugar" index="30" type="additive" value="2"/>
@@ -31,7 +31,7 @@
     <unit-type id="model.unit.expertFisherman" extends="colonist"
                price="1000" skill="1" expert-production="model.goods.fish"
                recruit-probability="1" score-value="4">
-      <modifier id="model.goods.fish" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.fish" index="30" type="multiplicative" value="2"/>
       <modifier id="model.goods.furs" index="30" type="additive" value="1"/>
     </unit-type>
     <unit-type id="model.unit.expertFurTrapper" extends="colonist"
@@ -86,7 +86,7 @@
                price="1500" skill="3" expert-production="model.goods.crosses"
                recruit-probability="1" score-value="6">
       <modifier id="model.modifier.missionaryTradeBonus" type="percentage" value="10"/>
-      <modifier id="model.goods.crosses" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.crosses" index="30" type="multiplicative" value="2"/>
       <modifier id="model.goods.bells" index="30" type="additive" value="2"/>
     </unit-type>
     <unit-type id="model.unit.elderStatesman" extends="colonist"
@@ -98,7 +98,7 @@
     <unit-type id="model.unit.masterCarpenter" extends="colonist"
                price="1000" skill="1" expert-production="model.goods.hammers"
                recruit-probability="1" score-value="4">
-      <modifier id="model.goods.hammers" index="30" type="additive" value="3"/>
+      <modifier id="model.goods.hammers" index="30" type="multiplicative" value="2"/>
       <modifier id="model.goods.lumber" index="30" type="additive" value="1"/>
     </unit-type>
     <unit-type id="model.unit.masterDistiller" extends="colonist"
@@ -131,12 +131,14 @@
       <modifier id="model.goods.tools" index="30" type="multiplicative" value="2"/>
       <modifier id="model.goods.muskets" index="30" type="additive" value="1"/>
     </unit-type>
+
     <unit-type id="model.unit.masterGunsmith" extends="colonist"
                price="850" skill="2" expert-production="model.goods.muskets"
                recruit-probability="1" score-value="5">
       <modifier id="model.goods.muskets" index="30" type="multiplicative" value="2"/>
       <modifier id="model.goods.tools" index="30" type="additive" value="2"/>
     </unit-type>
+
     <unit-type id="model.unit.jesuitMissionary" extends="colonist"
                price="1400" skill="3"
                recruit-probability="1" score-value="5">
@@ -144,6 +146,29 @@
       <ability id="model.ability.expertMissionary" value="true"/>
       <modifier id="model.modifier.missionaryTradeBonus" type="percentage" value="10"/>
       <modifier id="model.goods.crosses" index="30" type="additive" value="2"/>
+    </unit-type>
+
+    <unit-type id="model.unit.hardyPioneer" extends="colonist"
+               price="1200" skill="1"
+               recruit-probability="1" score-value="4">
+      <default-role id="model.role.pioneer"/>
+      <ability id="model.ability.expertPioneer" value="true"/>
+      <modifier id="model.modifier.tileTypeChangeProduction" type="multiplicative" value="2">
+        <scope type="model.goods.lumber"/>
+      </modifier>
+      <modifier id="model.goods.tools" index="30" type="additive" value="1"/>
+    </unit-type>
+
+    <unit-type id="model.unit.veteranSoldier" extends="colonist"
+               price="2000" skill="2" recruit-probability="1" score-value="5">
+      <default-role id="model.role.soldier"/>
+      <ability id="model.ability.mercenaryUnit" value="true"/>
+      <ability id="model.ability.expertSoldier" value="true"/>
+      <ability id="model.ability.supportUnit" value="true"/>
+      <modifier id="model.modifier.offence" index="40" type="percentage" value="50"/>
+      <modifier id="model.modifier.defence" type="percentage" value="50" index="40"/>
+      <modifier id="model.goods.muskets" index="30" type="additive" value="1"/>
+      <modifier id="model.goods.bells" index="30" type="additive" value="1"/>
     </unit-type>
   </unit-types>
 </freecol-specification>
